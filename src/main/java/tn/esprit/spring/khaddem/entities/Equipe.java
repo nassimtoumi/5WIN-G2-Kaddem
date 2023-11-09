@@ -28,6 +28,13 @@ public class Equipe  implements Serializable {
     @ManyToMany(mappedBy = "equipes",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
    // @JsonIgnore
     private List<Etudiant> etudiants;
+
+    public Equipe(Integer idEquipe, String nomEquipe, Niveau niveau) {
+        this.idEquipe = idEquipe;
+        this.nomEquipe = nomEquipe;
+        this.niveau = niveau;
+    }
+
     @OneToOne(cascade = CascadeType.ALL)
     private DetailEquipe detailEquipe;
 }
